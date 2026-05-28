@@ -1,5 +1,7 @@
 ### EX7 Implementation of Link Analysis using HITS Algorithm
-### DATE: 
+### NAME : SIVABALAN M
+### REG NO : 212224230369
+### DATE: 27/05/2026
 ### AIM: To implement Link Analysis using HITS Algorithm in Python.
 ### Description:
 <div align = "justify">
@@ -44,16 +46,16 @@ def hits_algorithm(adjacency_matrix, max_iterations=100, tol=1.0e-6):
     
     for i in range(max_iterations):
         # Authority update
-
-             /*WRITE YOUR CODE HERE
+        new_authority_scores = np.dot(adjacency_matrix.T, hub_scores)
+        new_authority_scores /= np.linalg.norm(new_authority_scores, ord=2)  # Normalizing
         
         # Hub update
-
-             /*WRITE YOUR CODE HERE
+        new_hub_scores = np.dot(adjacency_matrix, new_authority_scores)
+        new_hub_scores /= np.linalg.norm(new_hub_scores, ord=2)  # Normalizing
         
         # Check convergence
-
-             /*WRITE YOUR CODE HERE
+        authority_diff = np.linalg.norm(new_authority_scores - authority_scores, ord=2)
+        hub_diff = np.linalg.norm(new_hub_scores - hub_scores, ord=2)
         
         if authority_diff < tol and hub_diff < tol:
             break
@@ -93,5 +95,9 @@ plt.show()
 ```
 
 ### Output:
+<img width="545" height="102" alt="image" src="https://github.com/user-attachments/assets/ee02007a-6999-452d-ae65-394fd0497da0" />
+
+<img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/b9bd0506-758c-4a5d-9575-105b88950c5e" />
 
 ### Result:
+Thus, Link Analysis using HITS Algorithm in Python is successfully implemented.
